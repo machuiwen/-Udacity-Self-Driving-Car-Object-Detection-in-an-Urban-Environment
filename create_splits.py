@@ -19,6 +19,27 @@ def split(data_dir):
     
     # TODO: Split the data present in `/home/workspace/data/waymo/training_and_validation` into train and val sets.
     # You should move the files rather than copy because of space limitations in the workspace.
+    files = [f for f in glob.glob(data_dir + '/training_and_validation/*.tfrecord')]
+    random.shuffle(files)
+
+    split_ratio = 0.8
+    split_index = int(len(files) * split_ratio)
+    train_files = files[:split_index]
+    val_files = files[split_index:]
+
+    train_dir = os.path.join(data_dir, 'train')
+    os.makedirs(train_dir, exist_ok=True)
+    val_dir = os.path.join(data_dir, 'val')
+    os.makedirs(val_dir, exist_ok=True)
+
+    for f in train_files:
+        f_base = os.path.basename(f)
+        os.rename(f, os.path.join(train_dir, f_base))
+
+    for f in val_files:
+        f_base = os.path.basename(f)
+        os.rename(f, os.path.join(val_dir, f_base))
+
 
 if __name__ == "__main__": 
     parser = argparse.ArgumentParser(description='Split data into training / validation / testing')

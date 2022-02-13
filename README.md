@@ -19,7 +19,7 @@ The data you will use for training, validation and testing is organized as follo
     - test - contains 3 files to test your model and create inference videos
 ```
 The `training_and_validation` folder contains file that have been downsampled: we have selected one every 10 frames from 10 fps videos. The `testing` folder contains frames from the 10 fps video without downsampling.
-```
+
 You will split this `training_and_validation` data into `train`, and `val` sets by completing and executing the `create_splits.py` file.
 
 
@@ -110,7 +110,7 @@ python experiments/model_main_tf2.py --model_dir=experiments/reference/ --pipeli
 **Note**: Both processes will display some Tensorflow warnings, which can be ignored. You may have to kill the evaluation script manually using
 `CTRL+C`.
 
-To monitor the training, you can launch a tensorboard instance by running `python -m tensorboard.main --logdir experiments/reference/`. You will report your findings in the writeup.
+To monitor the training, you can launch a tensorboard instance by running `python -m tensorboard.main --logdir experiments/reference/` or `tensorboard --logdir experiments/reference/`. You will report your findings in the writeup.
 
 ### Improve the performances
 

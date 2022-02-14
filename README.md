@@ -142,13 +142,20 @@ python inference_video.py --labelmap_path label_map.pbtxt --model_path experimen
 
 ### Project overview
 
-This section should contain a brief description of the project and what we are trying to achieve. Why is object detection such an important component of self driving car systems?
+This project is aiming to train an object detection model using Waymo's Open Dataset. Specifically, it's trying to detect cars, pedestrians, and cyclists from pictures captured on the road by Waymo's autonomous car.
+This task is important to self driving because it's a core step of understanding the environment on the road, and it's a prerequisite of predicting how other cars/objects will move.
+In the project we used Tensorflow's Object Detection API to define the model, and explored various options to improve the model.
 
 ### Set up
-This section should contain a brief description of the steps to follow to run the code for this repository.
+We used Udacity's workspace with GPU enaled. Please launch a workspace, and clone this repository to `/home/workspace`.
 
 ### Dataset
 #### Dataset analysis
+The dataset contains pictures taken by Waymo's autonomous car camera, and groundtruth object classes and bounding boxes. Objects including cars, pedestrians and cyclists.
+Here are some example pictures with bounding boxes plotted on the image itself.
+
+TODO
+
 This section should contain a quantitative and qualitative description of the dataset. It should include images, charts and other visualizations.
 #### Cross validation
 This section should detail the cross validation strategy and justify your approach.
